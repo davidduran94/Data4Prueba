@@ -1,8 +1,6 @@
 (function() {
-  'use strict';
-
   angular
-    .module('d3js')
+    .module('d3js', ['d3'])
     .controller('MainController', MainController);
 
   /** @ngInject */
