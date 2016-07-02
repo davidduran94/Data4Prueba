@@ -38,8 +38,11 @@
        <div ng-controller="ChartCtrl">
         <chart-form></chart-form>
         <bar-chart height="options.height" data="data" hovered="hovered(args)"></bar-chart>
-        
       </div>
+
+      <br><br>
+      <div ng-bind-html="deliberatelyTrustDangerousSnippet()"></div>
+
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -69,3 +72,4 @@
         <!-- endbuild -->
 </body>
 </html>
+

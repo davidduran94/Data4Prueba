@@ -1,0 +1,31 @@
+<div class="form">
+    <div ng-controller="ChartCtrl">
+	     <div class="dropdown line">
+	        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Seleccione un estado<span class="caret"></span></button>
+	        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	            <li ng-repeat="a in estados"><a ng-click="dropboxStateSelected(a)">{{a}}</a></li>
+	        </ul>
+	    </div>
+
+	    <div class="dropdown line">
+	        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Seleccione un año<span class="caret"></span></button>
+	        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	            <li ng-repeat="a in years"><a ng-click="dropboxYearSelected()">{{a}}</a></li>
+	        </ul>
+	    </div>
+
+	    <div class="dropdown line">
+	        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Seleccione orden<span class="caret"></span></button>
+	        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	            <li ng-repeat="a in orden"><a ng-click="dropboxOrderSelected()">{{a}}</a></li>
+	        </ul>
+	    </div>
+
+	    <br><br><br>
+	    <p>Estado Seleccionado: <strong>{{ selectedState }}</p>
+		<p></strong>IDH:<strong>{{current_idh}}</strong></p>
+	    <p>IDH Mayor: <strong>{{ idhMax}} </strong></p> 
+	    <p>IDH Menor: <strong>{{ idhMin}}  </strong><p>
+	    <p>Promedio de IDH: <strong>{{ idhProm}}</strong><p><br>
+    </div>
+</div>

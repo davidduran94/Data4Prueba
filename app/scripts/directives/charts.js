@@ -88,7 +88,7 @@ angular.module('data4PruebaApp')
 		                })
 		                .on('mouseover', dispatch.customHover)
 		                .on('click', function() { d3.select(this).style("fill", "red") });
-		                //.on('mouseout', function() { d3.select(this).style("fill", "steelblue") });
+		                //.on('mouseout', function() { d3.select(this).style("fill", "steelblue") });		  
 
 
 		            bars.transition()
