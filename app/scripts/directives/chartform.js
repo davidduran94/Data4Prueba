@@ -14,16 +14,16 @@ angular.module('data4PruebaApp')
             controller: function AppCtrl ($scope) {
                 var arr = [];
 
+                /*Cambia los datos de la grafica, generando nuevos valores aleatorios a*/
                 $scope.update = function(d, i){ 
-                	$scope.data = $scope.randomData();
-
+                	$scope.data = $scope.randomData(); 
+                	console.log("updated");
                 };
+
                 
                 $scope.randomData = function(){
-					for (var i = 0, l = 32; i < l; i++) {
-					    arr.push( (Math.random() * (0.0001 - 0.9999) + 0.9999).toFixed(4) );
-					}
-					return arr;
+					return d3.range(~~(31*1)+1).map(function(d, i){return ( (Math.random()*(0.09999)).toFixed(4) );});
+
                 };
 
                 $scope.findBigger = function(arr){
@@ -46,17 +46,25 @@ angular.module('data4PruebaApp')
 					return small;
                 };
 
+                /*Funcion que detecta el estado seleccionado y cambia el color de este*/
                 $scope.findIDH = function(estado, arr){
-                	arr=$scope.data;
+                	arr=$scope.estados;
                 	var idh = arr[0];
-                	//console.log(estado);
+                    for (var i = 0; i < 32; i++) {
+                        var chartEl = d3.selectAll(".bar")[0][i];
+                        chartEl.style.fill = "steelblue";
+                    }
                 	for (var i = 0; i < 32; i++) {
-					    if($scope.estados[i] == estado)
+					    if($scope.estados[i] == estado){
 					    	idh = arr[i];
+                            var chartEl = d3.selectAll(".bar")[0][i];
+                            chartEl.style.fill = "red";
+                        }
 					}
 					return idh;
                 };
 
+                /*Función para encontrar el promedio de IDH */
                 $scope.promIDH = function (arr){
                 	arr=$scope.data;
                 	var prom=0;
@@ -67,6 +75,22 @@ angular.module('data4PruebaApp')
 					}
 					prom = prom/32;
 					return prom.toFixed(4);
+                };
+
+                $scope.ordenarDatos = function(){
+                    var datos = $scope.data; 
+                    //oredenamiento burbuja
+                    for (var i = 1; i <= datos.length; i++) {
+                        for (var j = 0; j <= datos.length-1; j++) {
+                            if(datos[j]>datos[j+1]){
+                                var aux = datos[j];
+                                datos[j] = datos[j+1];
+                                datos[j+1] = aux;
+                            }                                
+                        };
+                    };
+                    
+                    $scope.data = d3.range(~~(31*1)+1).map(function(d, i){return ( (Math.random()*(0.09999)).toFixed(4) );});
                 };
             },
 

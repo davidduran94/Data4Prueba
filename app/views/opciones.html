@@ -2,9 +2,9 @@
     <div ng-controller="ChartCtrl">
 	     <div class="dropdown line">
 	        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Seleccione un estado<span class="caret"></span></button>
-	        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-	            <li ng-repeat="a in estados"><a ng-click="dropboxStateSelected(a)">{{a}}</a></li>
-	        </ul>
+	        <ol class="list-group dropdown-menu" aria-labelledby="dropdownMenu1">
+	            <li class="list-group-item" ng-repeat="a in estados"><a ng-click="dropboxStateSelected(a)">{{a}}</a></li>
+	        </ol>
 	    </div>
 
 	    <div class="dropdown line">

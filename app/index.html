@@ -35,9 +35,12 @@
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div> -->
       <br>
-       <div ng-controller="ChartCtrl">
+       <div ng-controller="ChartCtrl" id="graficas">
         <chart-form></chart-form>
-        <bar-chart height="options.height" data="data" hovered="hovered(args)"></bar-chart>
+        <bar-chart height="options.height" data="data" hovered="hovered(args)" id="chart1"></bar-chart>
+
+        <bar-chart-mobile height="options.height" data="data" hovered="hovered(args)" id="chart1"></bar-chart-mobile>
+
       </div>
 
       <br><br>
