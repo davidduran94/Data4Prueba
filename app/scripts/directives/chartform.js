@@ -64,6 +64,17 @@ angular.module('data4PruebaApp')
 					return idh;
                 };
 
+                $scope.findIdhValue = function(estado, arr){
+                    arr=$scope.estados;
+                    var idh = $scope.data[0];
+                    for (var i = 0; i < 32; i++) {
+                        if($scope.estados[i] == estado){
+                            return $scope.data[i];
+                        }
+                    }
+                    return idh;
+                };
+
                 /*Función para encontrar el promedio de IDH */
                 $scope.promIDH = function (arr){
                 	arr=$scope.data;

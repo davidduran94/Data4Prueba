@@ -38,7 +38,8 @@ angular.module('data4PruebaApp')
         $scope.idhMax = $scope.findBigger();
         $scope.idhMin = $scope.findSmaller();
         $scope.idhProm= $scope.promIDH();
-        $scope.current_idh = $scope.findIDH(item);
+        $scope.findIDH(item);
+        $scope.current_idh = $scope.findIdhValue(item);
         //$scope.update();
         //$scope.$apply();
     };

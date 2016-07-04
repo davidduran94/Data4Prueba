@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'matchmedia-ng'
   ])
   .config(function ($routeProvider) {
     $routeProvider
