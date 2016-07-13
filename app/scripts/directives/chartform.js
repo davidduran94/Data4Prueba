@@ -23,7 +23,11 @@ angular.module('data4PruebaApp')
                 
                 $scope.randomData = function(){
 					return d3.range(~~(31*1)+1).map(function(d, i){return ( (Math.random()*(0.09999)).toFixed(4) );});
+                };
 
+
+                $scope.randomYears = function(){
+                    return d3.range(~~(4*1)+1).map(function(d, i){return ( (Math.random()*(2000)).toFixed(0) );});
                 };
 
                 $scope.findBigger = function(arr){
@@ -105,6 +109,7 @@ angular.module('data4PruebaApp')
                 };
             },
 
+            /*Template HTML del formulario de opciones*/
             templateUrl: 'views/opciones.html'
 
 	    }
