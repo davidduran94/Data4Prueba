@@ -1,8 +1,3 @@
-{
-  "name": "angular-animate",
-  "version": "1.2.16",
-  "main": "./angular-animate.js",
-  "dependencies": {
-    "angular": "1.2.16"
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2b18f6802da86ac22c4ca1396d15d0decef23a88bb225d5c95596d83d1b48bde
+size 138

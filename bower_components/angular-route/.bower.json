@@ -1,18 +1,3 @@
-{
-  "name": "angular-route",
-  "version": "1.2.16",
-  "main": "./angular-route.js",
-  "dependencies": {
-    "angular": "1.2.16"
-  },
-  "homepage": "https://github.com/angular/bower-angular-route",
-  "_release": "1.2.16",
-  "_resolution": {
-    "type": "version",
-    "tag": "v1.2.16",
-    "commit": "ed0e2b796077d953f518cb81cc7af981cf695a45"
-  },
-  "_source": "https://github.com/angular/bower-angular-route.git",
-  "_target": "1.2.16",
-  "_originalSource": "angular-route"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2d98b4dd922f538e1d34f6657aa3ce46edb8bb771e218f218c9e1e513abc9be
+size 475

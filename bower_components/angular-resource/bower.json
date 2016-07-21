@@ -1,8 +1,3 @@
-{
-  "name": "angular-resource",
-  "version": "1.2.16",
-  "main": "./angular-resource.js",
-  "dependencies": {
-    "angular": "1.2.16"
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b8688c171b9e107b6ffc66ea891dee35b591c866fb41bcff616d3bfc37fe12ee
+size 140

@@ -1,7 +1,3 @@
-{
-  "name": "angular",
-  "version": "1.2.16",
-  "main": "./angular.js",
-  "dependencies": {
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d43cd3916cd0f4e6e41599f129127121332226b9cd4d838746484ee91ad8def9
+size 98

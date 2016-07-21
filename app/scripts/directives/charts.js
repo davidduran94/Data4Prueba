@@ -176,6 +176,9 @@ angular.module('data4PruebaApp')
 	              		.attr("width", "100%");
 		            	scope.render(scope.data, svg);
 		            }
+		            else if(angular.element($(window))[0].innerWidth>481)
+		            	console.log("gogad");
+		                var chart = d3.custom.barChart();
 		        });
 		 
 		        scope.render = function(data, svg){

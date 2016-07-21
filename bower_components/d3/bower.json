@@ -1,7 +1,3 @@
-{
-  "name": "d3",
-  "description": "A JavaScript visualization library for HTML and SVG.",
-  "main": "d3.js",
-  "license": "BSD-3-Clause",
-  "ignore": []
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:40dd2b610acb43eec81d38e27c37e56ba7221614ae33f5aa84e8c00cc82e0df8
+size 156

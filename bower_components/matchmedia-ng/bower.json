@@ -1,1 +1,3 @@
-{"author":"Jason Kulatunga","name":"matchmedia-ng","description":"matchmedia wrapper for AngularJS","version":"1.0.8","homepage":"https://github.com/AnalogJ/matchmedia-ng","repository":{"type":"git","url":"git://github.com/AnalogJ/matchmedia-ng.git"},"main":"./matchmedia-ng.js","dependencies":{"matchmedia":"~0.2.0"}}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f30d46de89c0c50bdb0f01c31d1ddded2c71950ee6ce05a1d03a8f6a99f22e4c
+size 318
