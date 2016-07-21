@@ -10,14 +10,14 @@
 	    <div class="dropdown line">
 	        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Seleccione un año<span class="caret"></span></button>
 	        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-	            <li ng-repeat="a in years"><a ng-click="dropboxYearSelected()">{{a}}</a></li>
+	            <li ng-repeat="a in years"><a ng-click="dropboxYearSelected(a)">{{a}}</a></li>
 	        </ul>
 	    </div>
 
 	    <div class="dropdown line">
 	        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Seleccione orden<span class="caret"></span></button>
 	        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-	            <li ng-repeat="a in orden"><a ng-click="dropboxOrderSelected()">{{a}}</a></li>
+	            <li ng-repeat="a in orden"><a ng-click="dropboxOrderSelected(a)">{{a}}</a></li>
 	        </ul>
 	    </div>
 

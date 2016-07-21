@@ -1,6 +1,11 @@
 body {
     font: 14px sans-serif;
 }
+
+rect {
+    fill: steelblue;
+}
+
 .axis path, .axis line {
     fill: none;
     stroke: black;

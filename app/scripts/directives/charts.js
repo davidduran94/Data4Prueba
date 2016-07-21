@@ -13,7 +13,7 @@ angular.module('data4PruebaApp')
 
 		d3.custom.barChart = function module() {
 		    var margin = {top: 20, right: 20, bottom: 40, left: 40},
-		        width = 700,
+		        width = 600,
 		        height = 700,
 		        gap = 0,
 		        ease = 'cubic-in-out';
@@ -143,7 +143,8 @@ angular.module('data4PruebaApp')
             },
             link: function(scope, element, attrs) {
                 var chartEl = d3.select(element[0]);
-                chart.on('customHover', function(d, i){
+
+                chart.on('customHover', function(d, i){ //se detecta cuando un elemento de la gráfica es seleccionado
                     scope.hovered({args:d});
                 });
 
@@ -154,6 +155,80 @@ angular.module('data4PruebaApp')
                 scope.$watch('height', function(d, i){
                     chartEl.call(chart.height(scope.height));
                 });
+
+
+                
+                /*
+                	Se observa cuando la ventana cambia de tamaño y se llama a la función que vuelve a crear la grafica
+                */
+
+                window.onresize = function() {
+            		return scope.$apply();
+          		};
+                scope.$watch(function() {
+	              return angular.element($(window))[0].innerWidth;
+		        }, function() {
+		        	if(angular.element($(window))[0].innerWidth<480){
+		            	// remove all previous items before render
+		            	chartEl.selectAll("*").remove();
+		            	var svg = d3.select(element[0])
+	              		.append("svg")
+	              		.attr("width", "100%");
+		            	scope.render(scope.data, svg);
+		            }
+		        });
+		 
+		        scope.render = function(data, svg){
+		        	var newData = data;
+		        	var estados = ['Aguascalientes','Baja California','Baja California Sur','Campeche','Chiapas','Chihuahua','Coahuila','Colima','Distrito Federal','Durango','Estado de México','Guanajuato','Guerrero','Hidalgo','Jalisco','Michoacán','Morelos','Nayarit','Nuevo León','Oaxaca','Puebla','Querétaro','Quintana Roo','San Luis Potosí','Sinaloa','Sonora','Tabasco','Tamaulipas','Tlaxcala','Veracruz','Yucatán','Zacatecas'];
+		        	data = [];
+		        	for(var k =0; k<35; k++){
+		        		var obj = {name:estados[k], score: Number(newData[k])};
+		        		data.push(obj);
+		        	}
+		        	console.log(data);
+
+		            // setup variables
+		            var width, height, max;
+		            width = d3.select(element[0])[0][0].offsetWidth - 4;
+		              // 20 is for margins and can be changed
+		            height = scope.data.length * 35;
+		              // 35 = 30(bar height) + 5(margin between bars)
+		            max = 98;
+		              // this can also be found dynamically when the data is not static
+		              // max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
+
+		            // set the height based on the calculations above
+		            svg.attr('height', height);
+
+		            //create the rectangles for the bar chart
+		            svg.selectAll("rect")
+		              .data(data)
+		              .enter()
+		                .append("rect")
+		                .on("click", function(d, i){return scope.onClick({item: d});})
+		                .attr("height", 24) // height of each bar
+		                .attr("width", 0) // initial width of 0 for transition
+		                .attr("x", 0.25) // half of the 20 side margin specified above
+		                .attr("y", function(d, i){
+		                  return i * 35;
+		                }) // height + margin between bars
+		                .attr("fill", "steelblue")
+		                .transition()
+		                  .duration(1000) // time of duration
+		                  .attr("width", function(d){
+		                    return 100*d.score/(max/width);
+		                  }); // width based on scale
+
+		            svg.selectAll("text")
+		              .data(data)
+		              .enter()
+		                .append("text")
+		                .attr("fill", "black")
+		                .attr("y", function(d, i){return i * 35 + 17;})
+		                .attr("x", 2)
+		                .text(function(d){return d.name+" IDH: "+d.score;});
+	          };
             }
         };
 });
